@@ -451,7 +451,7 @@ class CrawlerScheduler(object):
     def requestWebApi(self, url, params):
         headers = copy.deepcopy(HEADERS)
         headers['cookie'] = '_ga=GA1.2.1280899533.15586873031; _gid=GA1.2.2142818962.1559528881'
-        res = requests.get(url,  headers=headers, params=params)
+        res = requests.get(url, headers=headers, params=params)
         content = res.content.decode('utf-8')
         print(content)
         if not content:
@@ -506,7 +506,7 @@ if __name__ == "__main__":
 
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hi:o:", [
-                                   "favorite", "urls=", "filename="])
+            "favorite", "urls=", "filename="])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
